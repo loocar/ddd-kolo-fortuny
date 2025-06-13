@@ -53,13 +53,25 @@
       height: 100%;
     }
 
-    #indicator {
-      position: absolute;
-      top: -60px;
-      left: 50%;
-      transform: translateX(-50%) rotate(180deg);
-      width: 120px;
-      height: auto;
+	#indicator {
+	  position: absolute;
+	  top: -230px; 
+	  left: 50%;
+	  transform: translateX(-50%) rotate(180deg);
+	  transform-origin: bottom center;
+	  width: 120px;
+	  height: auto;
+	}
+
+
+	@keyframes tapRight {
+	  0%   { transform: translateX(-50%) rotate(180deg); }
+	  50%  { transform: translateX(-50%) rotate(175deg); }
+	  100% { transform: translateX(-50%) rotate(180deg); }
+	}
+
+    #indicator.tap {
+      animation: tapRight 0.15s ease-in-out;
     }
   </style>
 </head>
@@ -68,20 +80,17 @@
   <h1>Dildo Driven Development</h1>
 
   <div class="main">
-    <!-- Left column: controls -->
     <div id="controls">
       <button id="spinBtn">Spin</button>
       <div class="result" id="resultText"></div>
     </div>
 
-    <!-- Right column: wheel -->
     <div id="wheel-container">
       <canvas id="wheel" width="1000" height="1000"></canvas>
       <img id="indicator" src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Dildo.png" alt="Dildo">
     </div>
   </div>
 
-  <!-- Local audio files -->
   <audio id="clickSound" src="click.mp3" preload="auto"></audio>
   <audio id="dingSound" src="ding.mp3" preload="auto"></audio>
 
@@ -108,8 +117,7 @@
 
     const colors = [
       "#f44336", "#4caf50", "#2196f3", "#ffeb3b", "#9c27b0",
-      "#ff9800", "#3f51b5", "#00bcd4", "#8bc34a", "#e91e63",
-      "#607d8b", "#ffc107"
+      "#ff9800", "#3f51b5", "#00bcd4", "#8bc34a", "#e91e63"
     ];
 
     const clickSound = document.getElementById("clickSound");
@@ -161,6 +169,8 @@
       if (spinning) return;
       spinning = true;
 
+      const indicator = document.getElementById("indicator");
+
       let duration = 5000;
       let start = null;
       let totalRotation = Math.PI * 10 + Math.random() * Math.PI * 2;
@@ -183,6 +193,10 @@
           clickSound.currentTime = 0;
           clickSound.play();
           lastPlayedSegment = currentSegment;
+
+          indicator.classList.remove("tap");
+          void indicator.offsetWidth; // force reflow
+          indicator.classList.add("tap");
         }
 
         if (t < 1) {
