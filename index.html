@@ -17,17 +17,8 @@
 
     h1 {
       margin-top: 30px;
-		}
-	.visually-hidden {
-	  position: absolute;
-	  width: 1px;
-	  height: 1px;
-	  padding: 0;
-	  overflow: hidden;
-	  clip: rect(0 0 0 0);
-	  white-space: nowrap;
-	  border: 0;
-	}
+    }
+
     .main {
       display: flex;
       justify-content: center;
@@ -84,6 +75,14 @@
     #indicator.tap {
       animation: tapRight 0.15s ease-in-out;
     }
+
+    footer {
+      max-width: 700px;
+      margin: 60px auto 40px auto;
+      font-size: 14px;
+      color: #444;
+      padding: 0 20px;
+    }
   </style>
 </head>
 <body>
@@ -93,12 +92,6 @@
   </header>
 
   <main>
-    <section>
-		<p class="visually-hidden">
-		  Dildo Driven Development is a satirical methodology that pokes fun at chaotic programming practices. Spin the wheel and let fate decide your next irrational dev decision!
-		</p>  
-	</section>
-
     <div class="main">
       <div id="controls">
         <button id="spinBtn">Spin</button>
@@ -111,6 +104,10 @@
       </div>
     </div>
   </main>
+
+  <footer>
+    <p><strong>Dildo Driven Development</strong> is a parody of modern software practices. This project humorously visualizes chaotic dev behavior by letting you spin a wheel of irrational programming decisions. Embrace chaos and let the wheel decide your next move.</p>
+  </footer>
 
   <audio id="clickSound" src="click.mp3" preload="auto"></audio>
   <audio id="dingSound" src="ding.mp3" preload="auto"></audio>
