@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Dildo Driven Development</title>
+  <title>Dildo Driven Development – Spin the Dev Wheel</title>
+  <meta name="description" content="A humorous take on Dildo Driven Development – spin the wheel and discover absurd software engineering rituals. For developers who dare.">
+  <meta name="keywords" content="Dildo Driven Development, DDD, programming humor, developer wheel, software jokes, parody development">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: sans-serif;
@@ -53,22 +56,21 @@
       height: 100%;
     }
 
-	#indicator {
-	  position: absolute;
-	  top: -230px; 
-	  left: 50%;
-	  transform: translateX(-50%) rotate(180deg);
-	  transform-origin: bottom center;
-	  width: 120px;
-	  height: auto;
-	}
+    #indicator {
+      position: absolute;
+      top: -230px;
+      left: 50%;
+      transform: translateX(-50%) rotate(180deg);
+      transform-origin: bottom center;
+      width: 120px;
+      height: auto;
+    }
 
-
-	@keyframes tapRight {
-	  0%   { transform: translateX(-50%) rotate(180deg); }
-	  50%  { transform: translateX(-50%) rotate(175deg); }
-	  100% { transform: translateX(-50%) rotate(180deg); }
-	}
+    @keyframes tapRight {
+      0%   { transform: translateX(-50%) rotate(180deg); }
+      50%  { transform: translateX(-50%) rotate(175deg); }
+      100% { transform: translateX(-50%) rotate(180deg); }
+    }
 
     #indicator.tap {
       animation: tapRight 0.15s ease-in-out;
@@ -77,19 +79,27 @@
 </head>
 <body>
 
-  <h1>Dildo Driven Development</h1>
+  <header>
+    <h1>Dildo Driven Development</h1>
+  </header>
 
-  <div class="main">
-    <div id="controls">
-      <button id="spinBtn">Spin</button>
-      <div class="result" id="resultText"></div>
-    </div>
+  <main>
+    <section>
+      <p><strong>Dildo Driven Development</strong> is a satirical methodology that pokes fun at chaotic programming practices. Spin the wheel and let fate decide your next irrational dev decision!</p>
+    </section>
 
-    <div id="wheel-container">
-      <canvas id="wheel" width="1000" height="1000"></canvas>
-      <img id="indicator" src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Dildo.png" alt="Dildo">
+    <div class="main">
+      <div id="controls">
+        <button id="spinBtn">Spin</button>
+        <div class="result" id="resultText"></div>
+      </div>
+
+      <div id="wheel-container">
+        <canvas id="wheel" width="1000" height="1000"></canvas>
+        <img id="indicator" src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Dildo.png" alt="Pointer for Dildo Driven Development Wheel">
+      </div>
     </div>
-  </div>
+  </main>
 
   <audio id="clickSound" src="click.mp3" preload="auto"></audio>
   <audio id="dingSound" src="ding.mp3" preload="auto"></audio>
@@ -103,26 +113,26 @@
     const radius = 450;
 
     const segments = [
-	  "Rewrite the ticket title 100 times",
-	  "Ask for missing details, wait forever",
-	  "Close as 'won't fix' and move on",
-	  "Act like it works flawlessly",
-	  "Add a random new library",
-	  "Deploy on a Friday (again)",
-	  "Debug blindly for 4 hours",
-	  "Comment everything out, pray",
-	  "Blame ChatGPT (obviously)",
-	  "Send Rysiek from Klan and wait",
-	  "Switch tabs until the bug disappears",
-	  "Reopen Jira ticket for the 5th time",
-	  "Refactor something nobody asked for",
-	  "Blame backend, regardless of context",
-	  "Push to prod without testing (YOLO)",
-	  "Spend 4h naming a variable",
-	  "Reply 'Works for me' and ignore",
-	  "File support ticket to yourself",
-	  "Rename everything for consistency (and chaos)",
-	  "Reboot Jenkins and pray harder"
+      "Rewrite the ticket title 100 times",
+      "Ask for missing details, wait forever",
+      "Close as 'won't fix' and move on",
+      "Act like it works flawlessly",
+      "Add a random new library",
+      "Deploy on a Friday (again)",
+      "Debug blindly for 4 hours",
+      "Comment everything out, pray",
+      "Blame ChatGPT (obviously)",
+      "Send Rysiek from Klan and wait",
+      "Switch tabs until the bug disappears",
+      "Reopen Jira ticket for the 5th time",
+      "Refactor something nobody asked for",
+      "Blame backend, regardless of context",
+      "Push to prod without testing (YOLO)",
+      "Spend 4h naming a variable",
+      "Reply 'Works for me' and ignore",
+      "File support ticket to yourself",
+      "Rename everything for consistency (and chaos)",
+      "Reboot Jenkins and pray harder"
     ];
 
     const colors = [
